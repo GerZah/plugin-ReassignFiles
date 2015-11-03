@@ -14,7 +14,7 @@ function reassignFiles_getFileNames($filterItemID = 0)
   FROM {$db->File} f
   LEFT JOIN {$db->ElementText} et
   ON f.item_id = et.record_id
-  WHERE et.element_id = 50 or et.element_id IS NULL
+  WHERE (et.element_id = 50 or et.element_id IS NULL)
   $filterItemInfix
   GROUP BY f.id";
 
@@ -112,14 +112,15 @@ function reassignFiles_deleteOrphans($potentialOrphans = false) {
   $sql = "SELECT it.id
           FROM `$db->Items` it
           LEFT JOIN {$db->ElementText} et
-          ON it.id = et.record_id
+          ON it.id = et.record_id AND et.element_id<>50
           LEFT JOIN `$db->File` f
           ON it.id = f.item_id
           $irJoin
           $idInfix
           AND et.record_id IS NULL
           AND f.item_id IS NULL
-          $irWhere";
+          $irWhere
+          AND it.item_type_id IS NULL";
   $orphans = $db->fetchAll($sql);
 
   if ($orphans) {

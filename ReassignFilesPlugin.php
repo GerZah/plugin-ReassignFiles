@@ -28,6 +28,7 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
 
   protected $_options = array(
     'reassign_files_delete_orphaned_items' => 1,
+		'reassign_files_local_reassign' => 0,
   );
   public function hookInitialize()
   {
@@ -75,10 +76,13 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
   */
   public function hookAdminItemsFormFiles()
   {
-    echo '<h3>' . __('Add Files from Other Items') . '</h3>';
-    $itemId = metadata('item', 'id');
-    $fileNames = reassignFiles_getFileNames($itemId); // from helpers/ReassignFilesFunctions.php
-    echo common('reassignfileslist', array( "fileNames" => $fileNames ), 'index');
+    $localReassign = (int)(boolean) get_option('reassign_files_local_reassign');
+    if ($localReassign) {
+      echo '<h3>' . __('Add Files from Other Items') . '</h3>';
+      $itemId = metadata('item', 'id');
+      $fileNames = reassignFiles_getFileNames($itemId); // from helpers/ReassignFilesFunctions.php
+      echo common('reassignfileslist', array( "fileNames" => $fileNames ), 'index');
+    }
   }
 
   public function hookAfterSaveItem($args)
@@ -105,6 +109,7 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
   */
   public static function hookConfigForm() {
     $deleteOrphanedItems = (int)(boolean) get_option('reassign_files_delete_orphaned_items');
+    $localReassign = (int)(boolean) get_option('reassign_files_local_reassign');
     require dirname(__FILE__) . '/config_form.php';
   }
 
@@ -114,6 +119,8 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
   public static function hookConfig() {
     $deleteOrphanedItems = (int)(boolean) $_POST['reassign_files_delete_orphaned_items'];
     set_option('reassign_files_delete_orphaned_items', $deleteOrphanedItems);
+    $localReassign = (int)(boolean) $_POST['reassign_files_local_reassign'];
+    set_option('reassign_files_local_reassign', $localReassign);
     $deleteOrphanedItemsNow = (int)(boolean) $_POST['reassign_files_delete_orphaned_items_now'];
     if ($deleteOrphanedItemsNow) { reassignFiles_deleteOrphans(); }
   }

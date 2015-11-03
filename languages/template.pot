@@ -17,35 +17,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ReassignFilesPlugin.php:58 views/admin/index/index.php:46
+#: ReassignFilesPlugin.php:60 views/admin/index/index.php:46
 msgid "Reassign Files"
 msgstr ""
 
-#: ReassignFilesPlugin.php:77
+#: ReassignFilesPlugin.php:81
 msgid "Add Files from Other Items"
 msgstr ""
 
 #: config_form.php:3
-msgid "Auto-Delete Orphaned Items"
+msgid "Enable Reassign in Item Editor"
 msgstr ""
 
 #: config_form.php:8
 msgid ""
-"Check this if you want to automatically delete items that become \"orphaned"
-"\" after reassigning their files to other items.<br>This will affect only "
-"those items that afterwards<br><ul><li>do not have any associated files left,"
-"</li><li>are neither subject nor object in a relationship (in case the "
-"\"Item Relations\" plugin is installed),</li><li>and contain no metadata "
-"whatsoever (i.e. entered text, not even a title).</li></ul><em>Please note:</"
-"em> This is often the case for files that were bulk-added through the "
-"\"Dropbox\" plugin."
+"Check this if you want to have a reassign functionality on the \"Files\" tab "
+"inside the admin item editor. If you frequently move files from one item to "
+"another, this could be helpful. However, if reassigning files is a rather "
+"uncommon procedure, especially in huge Omeka databases, it is advisable to "
+"keep this setting turned off and conduct it through the global reassign screen "
+"located in the left menu bar."
 msgstr ""
 
-#: config_form.php:21
+#: config_form.php:17
+msgid "Auto-Delete Orphaned Items"
+msgstr ""
+
+#: config_form.php:22
+msgid ""
+"Check this if you want to automatically delete items that become \"orphaned"
+"\" after reassigning their files to other items.<br>This will affect only "
+"those items that afterwards<br><ul><li>do not have an item type assigned,</"
+"li><li>do not have any associated files left,</li><li>are neither subject "
+"nor object in a relationship (in case the \"Item Relations\" plugin is "
+"installed),</li><li>and contain at the most a title, but no other metadata "
+"whatsoever (i.e. entered text).</li></ul><em>Please note:</em> This is often "
+"the case for files that were bulk-added through the \"Dropbox\" plugin."
+msgstr ""
+
+#: config_form.php:36
 msgid "One-Time Orphaned Items Check"
 msgstr ""
 
-#: config_form.php:26
+#: config_form.php:41
 msgid ""
 "Check this to initiate the search for orphaned items and their deletion "
 "<em>now</em> and exactly <em>once</em>.<br>This will be carried out as soon "
