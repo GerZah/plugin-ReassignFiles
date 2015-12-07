@@ -67,7 +67,13 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
   */
   public function hookDefineAcl($args)
   {
-    $args['acl']->addResource('ReassignFiles_Index');
+    $acl = $args['acl'];
+
+    $indexResource = new Zend_Acl_Resource('ReassignFiles_Index');
+    $acl->add($indexResource);
+
+    $acl->allow('contributor', 'ReassignFiles_Index', 'index');
+
   }
 
   /**

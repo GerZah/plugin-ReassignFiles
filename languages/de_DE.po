@@ -1,20 +1,21 @@
 # Translation for the Reassign Files plugin for Omeka.
 # Copyright (C) 2015 Gero Zahn
 # This file is distributed under the same license as the Omeka package.
-# Gero Zahn <gero.zahn@upb.de>, 2015.
 #
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Item Relations\n"
+"Project-Id-Version: WeSa Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-ItemRelations/issues\n"
 "POT-Creation-Date: 2014-01-13 12:59-0500\n"
-"PO-Revision-Date: 2015-10-29 11:28+0100\n"
-"Language: de_DE\n"
+"PO-Revision-Date: 2015-11-23 11:45+0100\n"
+"Last-Translator: githanjalli <anjallinhere@gmail.com>\n"
+"Language-Team: German (Germany) (http://www.transifex.com/upb/wesa-omeka/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.6\n"
 
 #: ReassignFilesPlugin.php:60 views/admin/index/index.php:46
@@ -30,61 +31,24 @@ msgid "Enable Reassign in Item Editor"
 msgstr "Verschieben im Objekt-Editor ermöglichen"
 
 #: config_form.php:8
-msgid ""
-"Check this if you want to have a reassign functionality on the \"Files\" tab "
-"inside the admin item editor. If you frequently move files from one item to "
-"another, this could be helpful. However, if reassigning files is a rather "
-"uncommon procedure, especially in huge Omeka databases, it is advisable to "
-"keep this setting turned off and conduct it through the global reassign screen "
-"located in the left menu bar."
-msgstr ""
-"Aktivieren Sie diese Einstellung, wenn Sie die Verschiebe-Funktionalität auf "
-"dem „Dateien“-Reiter innerhalb des Admin-Objekteditors verwenden wollen. Wenn "
-"Sie häufig Dateien von einem Objekt zu einem anderen verschieben, kann dies "
-"nützlich sein. Wenn das Verschieben von Dateien jedoch ein eher seltener "
-"Vorgang ist, speziell in großen Omeka-Datenbanken, ist es empfehlenswert, "
-"diese Einstellung ausgeschaltet zu lassen und dies über den globalen "
-"Verschiebe-Dialog in der linken Menüleiste durchzuführen."
+msgid "Check this if you want to have a reassign functionality on the \"Files\" tab inside the admin item editor. If you frequently move files from one item to another, this could be helpful. However, if reassigning files is a rather uncommon procedure, especially in huge Omeka databases, it is advisable to keep this setting turned off and conduct it through the global reassign screen located in the left menu bar."
+msgstr "Aktivieren Sie diese Einstellung, wenn Sie die Verschiebe-Funktionalität auf dem „Dateien“-Reiter innerhalb des Admin-Objekteditors verwenden wollen. Wenn Sie häufig Dateien von einem Objekt zu einem anderen verschieben, kann dies nützlich sein. Wenn das Verschieben von Dateien jedoch ein eher seltener Vorgang ist, speziell in großen Omeka-Datenbanken, ist es empfehlenswert, diese Einstellung ausgeschaltet zu lassen und dies über den globalen Verschiebe-Dialog in der linken Menüleiste durchzuführen."
 
 #: config_form.php:17
 msgid "Auto-Delete Orphaned Items"
 msgstr "Verwaiste Objekte automatisch löschen"
 
 #: config_form.php:22
-msgid ""
-"Check this if you want to automatically delete items that become \"orphaned\" "
-"after reassigning their files to other items.<br>This will affect only those "
-"items that afterwards<br><ul><li>do not have an item type assigned,</li><li>do "
-"not have any associated files left,</li><li>are neither subject nor object in "
-"a relationship (in case the \"Item Relations\" plugin is installed),</"
-"li><li>and contain at the most a title, but no other metadata whatsoever (i.e. "
-"entered text).</li></ul><em>Please note:</em> This is often the case for files "
-"that were bulk-added through the \"Dropbox\" plugin."
-msgstr ""
-"Aktivieren Sie diese Einstellung, wenn Sie „verwaiste“ Objekte automatisch "
-"löschen wollen, nachdem ihre Dateien zu anderen Objekten verschoben wurden."
-"<br>Dies betrifft lediglich diejenigen Objekte, die "
-"anschließend<br><ul><li>keinen Objekttyp zugewiesen haben,</li><li>keine "
-"weiteren assoziierten Dateien mehr haben,</li><li>die weder Subjekt- noch "
-"Objekt-Ressource in eine Objektbeziehung sind (sofern das „Item Relations“-"
-"Plugin installiert ist)</li><li>und höchstens einen Titel, aber keine weiteren "
-"Metadaten enthalten (d.h. eingegebenen Text).</li></ul><em>Bitte beachten Sie:"
-"</em> Dies ist oft der Fall bei Dateien, die in einem Rutsch mit Hilfe des "
-"„Dropbox“-Plugins installiert wurden."
+msgid "Check this if you want to automatically delete items that become \"orphaned\" after reassigning their files to other items.<br>This will affect only those items that afterwards<br><ul><li>do not have an item type assigned,</li><li>do not have any associated files left,</li><li>are neither subject nor object in a relationship (in case the \"Item Relations\" plugin is installed),</li><li>and contain at the most a title, but no other metadata whatsoever (i.e. entered text).</li></ul><em>Please note:</em> This is often the case for files that were bulk-added through the \"Dropbox\" plugin."
+msgstr "Aktivieren Sie diese Einstellung, wenn Sie „verwaiste“ Objekte automatisch löschen wollen, nachdem ihre Dateien zu anderen Objekten verschoben wurden.<br>Dies betrifft lediglich diejenigen Objekte, die anschließend<br><ul><li>keinen Objekttyp zugewiesen haben,</li><li>keine weiteren assoziierten Dateien mehr haben,</li><li>die weder Subjekt- noch Objekt-Ressource in eine Objektbeziehung sind (sofern das „Item Relations“-Plugin installiert ist)</li><li>und höchstens einen Titel, aber keine weiteren Metadaten enthalten (d.h. eingegebenen Text).</li></ul><em>Bitte beachten Sie:</em> Dies ist oft der Fall bei Dateien, die in einem Rutsch mit Hilfe des „Dropbox“-Plugins installiert wurden."
 
 #: config_form.php:36
 msgid "One-Time Orphaned Items Check"
 msgstr "Einmalige Überprüfung auf verwaiste Objekte"
 
 #: config_form.php:41
-msgid ""
-"Check this to initiate the search for orphaned items and their deletion "
-"<em>now</em> and exactly <em>once</em>.<br>This will be carried out as soon as "
-"you click on \"Save Changes\"."
-msgstr ""
-"Aktivieren Sie diese Einstellung, um <em>jetzt</em> und exakt <em>einmal</em> "
-"die Suche nach verwaisten Objekten und deren Löschung anzustoßen.<br>Dies wird "
-"unverzüglich ausgeführt, sobald Sie auf „Änderungen übernehmen“ klicken."
+msgid "Check this to initiate the search for orphaned items and their deletion <em>now</em> and exactly <em>once</em>.<br>This will be carried out as soon as you click on \"Save Changes\"."
+msgstr "Aktivieren Sie diese Einstellung, um <em>jetzt</em> und exakt <em>einmal</em> die Suche nach verwaisten Objekten und deren Löschung anzustoßen.<br>Dies wird unverzüglich ausgeführt, sobald Sie auf „Änderungen übernehmen“ klicken."
 
 #: helpers/ReassignFilesFunctions.php:24 views/admin/index/index.php:30
 msgid "Untitled Item"
@@ -92,22 +56,15 @@ msgstr "Unbenanntes Objekt"
 
 #: helpers/ReassignFilesFunctions.php:70 views/admin/index/save.php:18
 msgid "Please select one or more files to reassign to the selected item."
-msgstr ""
-"Bitte wählen Sie eine oder mehrere Dateien, die Sie zu dem ausgewählten Objekt "
-"verschieben wollen."
+msgstr "Bitte wählen Sie eine oder mehrere Dateien, die Sie zu dem ausgewählten Objekt verschieben wollen."
 
-#: helpers/ReassignFilesFunctions.php:72 views/admin/index/index.php:13
-#: views/admin/index/save.php:15
+#: helpers/ReassignFilesFunctions.php:72 views/admin/index/index.php:13 views/admin/index/save.php:15
 msgid "Please select an existing item to reassign files to."
-msgstr ""
-"Bitte wählen Sie ein bereits bestehendes Objekt, um eine oder mehrere Dateien "
-"dorthin zu verschieben."
+msgstr "Bitte wählen Sie ein bereits bestehendes Objekt, um eine oder mehrere Dateien dorthin zu verschieben."
 
 #: helpers/ReassignFilesFunctions.php:74
 msgid "Please select an item to reassign files to."
-msgstr ""
-"Bitte wählen Sie ein Objekt, um eine oder mehrere Dateien dorthin zu "
-"verschieben."
+msgstr "Bitte wählen Sie ein Objekt, um eine oder mehrere Dateien dorthin zu verschieben."
 
 #: views/admin/index/index.php:5
 msgid "Reassign Files to Item"
@@ -122,17 +79,12 @@ msgid "Step 2: Select Files to Reassign"
 msgstr "Schritt 2: Wählen Sie zu verschiebende Dateien"
 
 #: views/admin/index/index.php:38
-msgid ""
-"Please select one or more files to be reassigned to the above selected item."
-msgstr ""
-"Bitte wählen Sie eine oder mehrere Dateien, die Sie zu dem ausgewählten Objekt "
-"verschieben wollen."
+msgid "Please select one or more files to be reassigned to the above selected item."
+msgstr "Bitte wählen Sie eine oder mehrere Dateien, die Sie zu dem ausgewählten Objekt verschieben wollen."
 
 #: views/admin/index/reassignfileslist.php:1
 msgid "Select one or more files to be reassigned to this item."
-msgstr ""
-"Bitte wählen Sie eine oder mehrere Dateien, die Sie zu diesem Objekt "
-"verschieben wollen."
+msgstr "Bitte wählen Sie eine oder mehrere Dateien, die Sie zu diesem Objekt verschieben wollen."
 
 #: views/admin/index/save.php:14
 msgid "No item selected."
@@ -143,11 +95,8 @@ msgid "No file(s) selected."
 msgstr "Keine Datei(en) ausgewählt."
 
 #: views/admin/index/save.php:20
-msgid ""
-"The selected file or files were successfully reassigned to the selected item."
-msgstr ""
-"Die ausgewählte(n) Datei(en) wurden erfolgreich zum gewählten Objekt "
-"verschoben."
+msgid "The selected file or files were successfully reassigned to the selected item."
+msgstr "Die ausgewählte(n) Datei(en) wurden erfolgreich zum gewählten Objekt verschoben."
 
 #: views/admin/index/save.php:22
 msgid "Back"
