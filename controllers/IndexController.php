@@ -14,14 +14,14 @@ class ReassignFiles_IndexController extends Omeka_Controller_AbstractActionContr
   * Front admin page.
   */
   public function indexAction() {
-    $this->view->files = reassignFiles_getFileNames(); // from helpers/ReassignFilesFunctions.php
+    $this->view->files = ReassignFilesPlugin::reassignFiles_getFileNames();
   }
 
   public function saveAction()
   {
     if ($this->getRequest()->isPost()){
       if (isset($_POST['reassignFilesFiles']) and (isset($_POST['reassignFilesItem']))) {
-        $errMsg = reassignFiles_reassignFiles($_POST['reassignFilesItem'], $_POST['reassignFilesFiles']);
+        $errMsg = ReassignFilesPlugin::reassignFiles_reassignFiles($_POST['reassignFilesItem'], $_POST['reassignFilesFiles']);
         if ($errMsg) { $this->_helper->flashMessenger( $errMsg, 'error' ); }
       }
     }
