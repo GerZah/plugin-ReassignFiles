@@ -68,7 +68,7 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
     $indexResource = new Zend_Acl_Resource('ReassignFiles_Index');
     $acl->add($indexResource);
 
-    $acl->allow('contributor', 'ReassignFiles_Index', 'index');
+    $acl->allow(array('super', 'admin'), 'ReassignFiles_Index', 'index');
 
   }
 
@@ -144,18 +144,29 @@ class ReassignFilesPlugin extends Omeka_Plugin_AbstractPlugin
 
     $fileNames = array();
     $db = get_db();
-    $select = "SELECT et.text AS itemName, f.original_filename AS original_filename, f.item_id AS itemId, f.id AS fileId
-    FROM {$db->File} f
-    LEFT JOIN {$db->ElementText} et
-    ON f.item_id = et.record_id
-    WHERE (et.element_id = 50 or et.element_id IS NULL)
-    $filterItemInfix
-    GROUP BY f.id";
+
+    $select = "
+      SELECT f.original_filename AS original_filename, f.item_id AS itemId, f.id AS fileId
+      FROM {$db->File} f
+      WHERE 1 $filterItemInfix
+    ";
 
     $files = $db->fetchAll($select);
+
+    $itemIds = array();
+    foreach($files as $file) {
+      $itemIds[$file["itemId"]] = $file["itemId"];
+    }
+
+    $itemNames = array();
+    foreach($itemIds as $itemId) {
+      $item = get_record_by_id('Item', $itemId);
+      $itemNames[$itemId] = metadata($item, array('Dublin Core', 'Title'));
+    }
+
     foreach ($files as $file) {
       $fileNames[$file['fileId']] = $file['original_filename'].
-      ' - '.( $file['itemName'] ? $file['itemName'] : "[".__("Untitled Item")."]" ).
+      ' - '.$itemNames[$file['itemId']] .
       ' [#'.$file['itemId'].
       '/'.$file['fileId'].']';
     }
